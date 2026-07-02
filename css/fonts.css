@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Vazirmatn Variable";
+  src: url("../assets/fonts/Vazirmatn-Variable.woff2") format("woff2-variations"),
+       url("../assets/fonts/Vazirmatn-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Big Shoulders Display Variable";
+  src: url("../assets/fonts/BigShouldersDisplay-Variable.woff2") format("woff2-variations"),
+       url("../assets/fonts/BigShouldersDisplay-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,43 @@
+/* Shared layout primitives used across sections. */
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--sp-4);
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-inline: var(--sp-3);
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-latin);
+  font-variation-settings: "wght" 600;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--aluminum);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border: var(--hairline-gold);
+  border-radius: var(--radius);
+  font-family: var(--font-fa);
+  font-size: var(--fs-small);
+  color: var(--off-white);
+  transition: box-shadow var(--dur-micro) var(--ease-out),
+    background-color var(--dur-micro) var(--ease-out);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: rgba(201, 162, 39, 0.08);
+  box-shadow: var(--glow-gold);
+}
