@@ -10,18 +10,38 @@
 .hero__media {
   position: absolute;
   inset: 0;
+  background: var(--graphite);
+}
+
+.hero__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  /* Source photo has the car in the left ~60% of frame; keep it in view
+     as the crop tightens on narrow/tall viewports. */
+  object-position: 25% center;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
   background: radial-gradient(
       ellipse at 70% 20%,
-      rgba(27, 58, 92, 0.35),
+      rgba(27, 58, 92, 0.25),
       transparent 60%
     ),
     linear-gradient(
       180deg,
-      rgba(10, 10, 12, 0.25) 0%,
-      rgba(10, 10, 12, 0.75) 65%,
-      rgba(10, 10, 12, 0.97) 100%
+      rgba(10, 10, 12, 0.15) 0%,
+      rgba(10, 10, 12, 0.55) 55%,
+      rgba(10, 10, 12, 0.92) 100%
     ),
-    var(--graphite);
+    linear-gradient(
+      100deg,
+      transparent 0%,
+      transparent 45%,
+      rgba(10, 10, 12, 0.65) 100%
+    );
 }
 
 .hero__content {

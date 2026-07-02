@@ -21,6 +21,13 @@
     as="font"
     type="font/woff2"
   />
+  <link
+    rel="preload"
+    href="assets/images/hero-showroom.webp"
+    as="image"
+    type="image/webp"
+    fetchpriority="high"
+  />
 
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/tokens.css" />
@@ -69,7 +76,16 @@
   </header>
 
   <section class="hero" id="hero">
-    <div class="hero__media" aria-hidden="true"></div>
+    <picture class="hero__media" aria-hidden="true">
+      <source srcset="assets/images/hero-showroom.webp" type="image/webp" />
+      <img
+        src="assets/images/hero-showroom.jpg"
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+    <div class="hero__scrim" aria-hidden="true"></div>
 
     <div class="container hero__content">
       <p class="eyebrow hero__eyebrow" data-hero-in>PRIVATE VIEWING &middot; TEHRAN</p>
