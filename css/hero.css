@@ -1,0 +1,155 @@
+.hero {
+  position: relative;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 70% 20%,
+      rgba(27, 58, 92, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 12, 0.25) 0%,
+      rgba(10, 10, 12, 0.75) 65%,
+      rgba(10, 10, 12, 0.97) 100%
+    ),
+    var(--graphite);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  inline-size: 100%;
+  max-inline-size: 640px;
+  /* Overrides .container's margin-inline:auto shorthand so this block
+     anchors to the inline-start (right, in RTL) edge instead of centering. */
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+  padding-block-end: var(--sp-16);
+  text-align: start;
+}
+
+.hero__eyebrow {
+  margin-block-end: var(--sp-3);
+}
+
+.hero__headline {
+  font-family: var(--font-fa);
+  font-variation-settings: "wght" 600;
+  font-size: var(--fs-h1);
+  line-height: 1.25;
+  color: var(--off-white);
+}
+
+.hero__sub {
+  margin-block-start: var(--sp-4);
+  max-inline-size: 34ch;
+  color: var(--aluminum);
+  font-size: var(--fs-body);
+}
+
+/* The CTA breaks from the rest of the right-anchored text and sits at the
+   flow-end (left, in RTL) — the "end of the sentence" position, distinct
+   from the reading column. */
+.hero__cta {
+  display: flex;
+  inline-size: fit-content;
+  margin-block-start: var(--sp-6);
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+
+.hero__scroll-cue {
+  position: absolute;
+  inset-block-end: var(--sp-6);
+  inset-inline-end: var(--sp-4);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.hero__scroll-line {
+  position: relative;
+  inline-size: 1px;
+  block-size: 64px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--aluminum-50) 0,
+    var(--aluminum-50) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  overflow: hidden;
+}
+
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 0;
+  block-size: 16px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+  animation: scroll-pulse 2.6s var(--ease-out) infinite;
+}
+
+@keyframes scroll-pulse {
+  0% {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(64px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-line::after {
+    animation: none;
+    inset-block-start: auto;
+    inset-block-end: 0;
+    opacity: 1;
+    background: var(--gold);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    align-items: flex-end;
+  }
+
+  .hero__content {
+    max-inline-size: 100%;
+    padding-block-end: var(--sp-12);
+  }
+
+  .hero__sub {
+    margin-inline-start: 0;
+    max-inline-size: 100%;
+  }
+
+  .hero__scroll-cue {
+    inset-inline-end: var(--sp-3);
+    inset-block-end: var(--sp-4);
+  }
+
+  .hero__scroll-line {
+    block-size: 44px;
+  }
+}

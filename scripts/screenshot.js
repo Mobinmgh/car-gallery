@@ -20,7 +20,7 @@ const viewports = [
       viewport: { width: vp.width, height: vp.height },
     });
     await page.goto(url);
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1800);
     const out = path.resolve(
       __dirname,
       "..",

@@ -38,3 +38,24 @@ const prefersReducedMotion = window.matchMedia(
     if (event.key === "Escape") closeMenu();
   });
 })();
+
+// Hero load-in: one orchestrated stagger, priority #1 in the motion budget.
+(function initHero() {
+  const items = document.querySelectorAll("[data-hero-in]");
+  if (!items.length) return;
+
+  if (prefersReducedMotion) {
+    gsap.set(items, { opacity: 1, y: 0 });
+    return;
+  }
+
+  gsap.set(items, { opacity: 0, y: 24 });
+  gsap.to(items, {
+    opacity: 1,
+    y: 0,
+    duration: 0.9,
+    ease: "power3.out",
+    stagger: 0.12,
+    delay: 0.2,
+  });
+})();

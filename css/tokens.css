@@ -23,7 +23,7 @@
   --fs-small: 14px;
   --fs-h3: 28px;
   --fs-h2: 44px;
-  --fs-h1: clamp(2.5rem, 7vw, 6rem);
+  --fs-h1: clamp(2.25rem, 5.5vw, 4.5rem);
   --fs-spec: clamp(3.5rem, 10vw, 8.75rem);
 
   --lh-body: 1.7;
