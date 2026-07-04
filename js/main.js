@@ -138,6 +138,43 @@ const MOTION = {
   });
 })();
 
+// CTA buttons throughout: magnetic pull toward the cursor on hover. Fine-
+// pointer only (touch has no hover/cursor to pull toward) and skipped
+// under reduced motion, same as everything else in this pass.
+(function initMagneticButtons() {
+  if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) {
+    return;
+  }
+
+  const maxPull = 12;
+
+  document.querySelectorAll(".btn").forEach((btn) => {
+    const strength = 0.35;
+
+    btn.addEventListener("mousemove", (event) => {
+      const rect = btn.getBoundingClientRect();
+      const relX = event.clientX - (rect.left + rect.width / 2);
+      const relY = event.clientY - (rect.top + rect.height / 2);
+
+      gsap.to(btn, {
+        x: gsap.utils.clamp(-maxPull, maxPull, relX * strength),
+        y: gsap.utils.clamp(-maxPull, maxPull, relY * strength),
+        duration: MOTION.duration.fast,
+        ease: MOTION.ease,
+      });
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      gsap.to(btn, {
+        x: 0,
+        y: 0,
+        duration: MOTION.duration.base,
+        ease: MOTION.ease,
+      });
+    });
+  });
+})();
+
 // Craftsmanship: slow parallax on the material close-ups - each image
 // drifts vertically at a different rate than the page scroll, the classic
 // parallax read. The image is deliberately oversized in CSS so this never
