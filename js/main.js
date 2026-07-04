@@ -112,6 +112,46 @@ const MOTION = {
   });
 })();
 
+// Performance across the fleet: spec numbers count up from zero synced to
+// scroll position, not a timer. Reads straight off each cell's existing
+// text node (e.g. "3.3" inside "<td>3.3<span>s</span></td>") and animates
+// just that node, leaving the unit span untouched - no markup duplication
+// needed for the desktop table vs. the mobile stacked cards.
+(function initFleetCountUp() {
+  if (prefersReducedMotion) return;
+
+  const cells = document.querySelectorAll(
+    ".performance-fleet__table td, .fleet-spec-card__list dd"
+  );
+
+  cells.forEach((cell) => {
+    const textNode = cell.childNodes[0];
+    if (!textNode || textNode.nodeType !== Node.TEXT_NODE) return;
+
+    const raw = textNode.textContent.trim();
+    const target = parseFloat(raw);
+    if (Number.isNaN(target)) return;
+    const decimals = raw.includes(".") ? raw.split(".")[1].length : 0;
+
+    const trigger = cell.closest("table, .fleet-spec-card");
+    const counter = { value: 0 };
+
+    gsap.to(counter, {
+      value: target,
+      ease: "none",
+      scrollTrigger: {
+        trigger,
+        start: "top 80%",
+        end: "bottom 60%",
+        scrub: MOTION.scrub,
+      },
+      onUpdate: () => {
+        textNode.textContent = counter.value.toFixed(decimals);
+      },
+    });
+  });
+})();
+
 // The Floor: each card's photo scales down slightly and sharpens from a
 // blur as it centers in the viewport - a rack-focus moment per card, not a
 // plain fade-in. Targets the <img> inside the fixed-size media frame (not
