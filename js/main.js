@@ -111,3 +111,29 @@ const MOTION = {
     );
   });
 })();
+
+// The Floor: each card's photo scales down slightly and sharpens from a
+// blur as it centers in the viewport - a rack-focus moment per card, not a
+// plain fade-in. Targets the <img> inside the fixed-size media frame (not
+// the frame itself) so the grid layout never shifts.
+(function initFloorCardFocus() {
+  if (prefersReducedMotion) return;
+
+  document.querySelectorAll(".floor-card__media img").forEach((img) => {
+    gsap.fromTo(
+      img,
+      { scale: 1.06, filter: "blur(10px)" },
+      {
+        scale: 1,
+        filter: "blur(0px)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: img,
+          start: "top 90%",
+          end: "center center",
+          scrub: MOTION.scrub,
+        },
+      }
+    );
+  });
+})();
