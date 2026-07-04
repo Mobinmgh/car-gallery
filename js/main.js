@@ -112,6 +112,32 @@ const MOTION = {
   });
 })();
 
+// Provenance: the connecting line between steps draws itself (right to
+// left, matching reading direction and the route-line sweep's own
+// direction) as the section scrolls into view, extending that same visual
+// language into a "draw" rather than a "sweep." Only present at the
+// breakpoint where the steps sit in a single row (see provenance.css).
+(function initProvenanceLine() {
+  const fill = document.querySelector("[data-provenance-line]");
+  if (!fill) return;
+
+  if (prefersReducedMotion) {
+    gsap.set(fill, { scaleX: 1 });
+    return;
+  }
+
+  gsap.to(fill, {
+    scaleX: 1,
+    ease: "none",
+    scrollTrigger: {
+      trigger: fill.closest(".provenance__timeline"),
+      start: "top 80%",
+      end: "bottom 50%",
+      scrub: MOTION.scrub,
+    },
+  });
+})();
+
 // Craftsmanship: slow parallax on the material close-ups - each image
 // drifts vertically at a different rate than the page scroll, the classic
 // parallax read. The image is deliberately oversized in CSS so this never

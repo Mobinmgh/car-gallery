@@ -15,6 +15,28 @@
   line-height: 1.6;
 }
 
+/* The connecting line between steps, extending the route-line visual
+   language: a static aluminum track with a gold fill that draws itself
+   (scaleX 0 -> 1, right to left) as the section scrolls into view. Only
+   makes sense as one continuous line while the steps sit in a single row
+   (desktop) - below that breakpoint each step falls back to its own
+   static hairline, set further down. */
+.provenance__timeline {
+  display: none;
+  position: relative;
+  block-size: 1px;
+  background: var(--aluminum-25);
+  margin-block-end: var(--sp-3);
+}
+
+.provenance__timeline-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right center;
+}
+
 .provenance__steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -28,6 +50,17 @@
   gap: var(--sp-2);
   padding-block-start: var(--sp-3);
   border-block-start: var(--hairline-gold);
+}
+
+@media (min-width: 1024px) {
+  .provenance__timeline {
+    display: block;
+  }
+
+  .provenance__step {
+    padding-block-start: 0;
+    border-block-start: none;
+  }
 }
 
 .provenance__step-index {
