@@ -1,0 +1,63 @@
+/* The page's signature element: a horizontal chrome-reflection sweep that
+   runs across a hairline at the top of every "stop" section (3 through 9),
+   scroll-linked so the light travels as the visitor scrolls. Reused as-is
+   by each stop — only the index/label text changes per section. */
+
+.route-line {
+  position: relative;
+  z-index: var(--z-route);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.route-line__marker {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+}
+
+.route-line__index {
+  font-family: var(--font-latin);
+  font-variation-settings: "wght" 600;
+  font-size: 1.25rem;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.route-line__label {
+  font-family: var(--font-latin);
+  font-variation-settings: "wght" 500;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--aluminum);
+}
+
+.route-line__track {
+  position: relative;
+  flex: 1;
+  block-size: 1px;
+  background: var(--aluminum-25);
+  overflow: hidden;
+}
+
+.route-line__sweep {
+  /* Physical (not logical) left/transform on purpose: the sweep's travel
+     distance is computed in real pixels in JS (track width), so it needs
+     a fixed physical anchor regardless of writing direction. */
+  position: absolute;
+  left: 0;
+  inset-block: -1px;
+  inline-size: 160px;
+  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  filter: drop-shadow(0 0 6px var(--gold-35));
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-line__sweep {
+    display: none;
+  }
+}

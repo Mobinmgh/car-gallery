@@ -59,3 +59,32 @@ const prefersReducedMotion = window.matchMedia(
     delay: 0.2,
   });
 })();
+
+// Route-line: the page's signature scroll-linked sweep, priority #2 in the
+// motion budget. Shared by every "stop" section (3 through 9) — reduced
+// motion just hides the sweep entirely via CSS, so there's nothing to do here.
+(function initRouteLines() {
+  if (prefersReducedMotion) return;
+
+  document.querySelectorAll("[data-route-line]").forEach((line) => {
+    const track = line.querySelector(".route-line__track");
+    const sweep = line.querySelector(".route-line__sweep");
+    if (!track || !sweep) return;
+
+    gsap.fromTo(
+      sweep,
+      { x: () => track.offsetWidth + sweep.offsetWidth },
+      {
+        x: () => -sweep.offsetWidth,
+        ease: "none",
+        scrollTrigger: {
+          trigger: line,
+          start: "top 85%",
+          end: "bottom 15%",
+          scrub: 0.6,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
+  });
+})();
