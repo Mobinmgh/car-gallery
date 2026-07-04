@@ -19,8 +19,8 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-4);
-  block-size: var(--nav-height);
-  padding-block-start: var(--sp-2);
+  min-block-size: var(--nav-height);
+  padding-block: var(--sp-2);
 }
 
 .nav__logo {
