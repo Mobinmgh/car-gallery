@@ -175,6 +175,43 @@ const MOTION = {
   });
 })();
 
+// Floor cards: subtle tilt toward cursor position on hover - the photo
+// frame only (not the name/price text below it), so the 3D effect reads
+// as a physical framed print rather than tilting text out of legibility.
+// Same fine-pointer + reduced-motion gates as the magnetic buttons.
+(function initFloorCardTilt() {
+  if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) {
+    return;
+  }
+
+  const maxTilt = 6;
+
+  document.querySelectorAll(".floor-card__media").forEach((media) => {
+    media.addEventListener("mousemove", (event) => {
+      const rect = media.getBoundingClientRect();
+      const relX = (event.clientX - rect.left) / rect.width - 0.5;
+      const relY = (event.clientY - rect.top) / rect.height - 0.5;
+
+      gsap.to(media, {
+        rotateX: relY * -maxTilt,
+        rotateY: relX * maxTilt,
+        transformPerspective: 600,
+        duration: MOTION.duration.fast,
+        ease: MOTION.ease,
+      });
+    });
+
+    media.addEventListener("mouseleave", () => {
+      gsap.to(media, {
+        rotateX: 0,
+        rotateY: 0,
+        duration: MOTION.duration.base,
+        ease: MOTION.ease,
+      });
+    });
+  });
+})();
+
 // Craftsmanship: slow parallax on the material close-ups - each image
 // drifts vertically at a different rate than the page scroll, the classic
 // parallax read. The image is deliberately oversized in CSS so this never
