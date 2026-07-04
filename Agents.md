@@ -55,16 +55,16 @@ Respect `prefers-reduced-motion`. Don't animate everything. Pick the 2-3 moments
 
 1. **Nav** — minimal, transparent over hero, solid on scroll. Gallery name/mark, 3-4 links max, one CTA (book viewing). RTL: logo right, links left.
 2. **Hero** — full-bleed. One dominant statement (see anchor headline below, or something sharper if you find it). One supporting line, not a paragraph. Subtle scroll cue.
-3. **Arrival / trust statement** — why this gallery exists: provenance, vetting, no auction-flip inventory. 2-3 sentences max. Route-line motif starts here.
-4. **Design stop** — one car as a museum piece. Large image area, minimal copy, Latin-numeral spec treatment introduced (silhouette line, dimensions, design year).
-5. **Performance stop** — real spec numbers: 0-100, top speed, horsepower, torque. Numbers dominate visually, Persian labels underneath in the utility face.
-6. **Cabin stop** — interior focus. Materials language (leather grade, wood trim, stitching), not generic luxury adjectives.
-7. **Craftsmanship stop** — the human/provenance layer. Who inspects the cars, what vetting looks like, why this beats a classified ad. Trust close before the sell.
-8. **Inventory teaser** — grid of 3-4 more cars, each just name/year/one number. Hints at range without becoming a listings page.
+3. **Arrival / trust statement** — why this gallery exists: provenance, vetting, no auction-flip inventory. 2-3 sentences max. Route-line motif starts here (index 01).
+4. **The Floor** — a curated grid of 4-5 cars actually in the gallery right now. Each card: image, model name, year, one headline number. No single car gets a full deep-dive here. This section's job is proving range — the visitor should see this is a gallery, not a page about one car. Route index 02.
+5. **Performance across the fleet** — pull 3 cars from The Floor, show their spec numbers (0-100, top speed, horsepower, torque) side by side. Reads as "this is the caliber across the inventory," not one car's brochure. Route index 03.
+6. **Craftsmanship** — cross-cut across the fleet, not one car's cabin. The interior/materials standard every car meets, illustrated with details from 2-3 different cars. Route index 04.
+7. **Provenance & vetting** — the deeper trust section, not tied to any single car. Who inspects, how documentation works, why this beats an auction flip or a classified ad. This goes further than the quick Arrival statement — this is the "prove it" version, right before the sell. Route index 05.
+8. **Private viewing experience** — what booking an appointment actually looks like: by-appointment only, one-on-one walkthrough, paperwork/financing handled. Dealership-specific value, not generic luxury adjectives. Route index 06.
 9. **Book a viewing close** — route-line sweep converges here. One clear CTA (form or WhatsApp/Telegram/phone — pick what's realistic for a Tehran gallery), "by appointment only" framing, no clutter.
 10. **Footer** — name, contact, social, minimal legal line. No design energy spent here.
 
-Each stop is a beat on the test-drive route, not an interchangeable feature card. If a section doesn't earn its place on the route, cut it.
+Every stop from section 3 through 8 is a beat in the tour of the gallery itself — not a chapter in any single car's story. No section should ever be built around one specific model except as one card among several. If a section starts reading like a spec sheet for a single car, that's the mistake this project already made once — don't repeat it.
 
 ## Copy
 
