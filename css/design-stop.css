@@ -84,13 +84,10 @@
 }
 
 /* Numbers dominate visually, labels underneath — DOM order stays
-   dt-then-dd for correct term/description semantics; this just flips
+   dt-then-dd for correct term/description semantics; `order` just flips
    the visual order to match the numeral treatment used site-wide. */
 .design-stop__spec-value {
   order: -1;
-}
-
-.design-stop__spec-value {
   font-family: var(--font-latin);
   font-variation-settings: "wght" 600;
   font-size: 1.75rem;
