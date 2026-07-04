@@ -1,0 +1,85 @@
+.book-viewing {
+  background: var(--graphite);
+  padding-block: var(--sp-16);
+  text-align: center;
+}
+
+/* Where the route-line sweep converges: not another numbered stop, so
+   it drops the shared .route-line component and instead resolves into a
+   single static point - the route ends here. */
+.book-viewing__converge {
+  inline-size: 140px;
+  block-size: 1px;
+  margin-inline: auto;
+  margin-block-end: var(--sp-6);
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--aluminum-50) 45%,
+    var(--gold) 100%
+  );
+  position: relative;
+}
+
+.book-viewing__converge::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 50%;
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: var(--glow-gold);
+  transform: translate(50%, -50%);
+}
+
+.book-viewing__eyebrow {
+  display: block;
+  margin-block-end: var(--sp-4);
+  text-align: center;
+}
+
+.book-viewing__headline {
+  max-inline-size: 640px;
+  margin-inline: auto;
+  font-family: var(--font-fa);
+  font-variation-settings: "wght" 600;
+  font-size: var(--fs-h2);
+  line-height: 1.35;
+  color: var(--off-white);
+}
+
+.book-viewing__sub {
+  max-inline-size: 48ch;
+  margin-inline: auto;
+  margin-block-start: var(--sp-4);
+  color: var(--aluminum);
+  font-size: var(--fs-body);
+}
+
+.book-viewing__cta {
+  margin-block-start: var(--sp-8);
+}
+
+.book-viewing__phone {
+  margin-block-start: var(--sp-3);
+  color: var(--aluminum);
+  font-size: var(--fs-small);
+}
+
+.book-viewing__phone a {
+  font-family: var(--font-latin);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .book-viewing {
+    padding-block: var(--sp-8);
+  }
+
+  .book-viewing__headline {
+    font-size: var(--fs-h3);
+  }
+}
