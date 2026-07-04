@@ -36,9 +36,6 @@
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/route-line.css" />
-  <link rel="stylesheet" href="css/arrival.css" />
-  <link rel="stylesheet" href="css/design-stop.css" />
-  <link rel="stylesheet" href="css/performance-stop.css" />
 </head>
 <body>
   <header class="nav" id="site-nav">
@@ -50,9 +47,9 @@
 
       <nav class="nav__links" aria-label="پیوندهای اصلی">
         <ul>
-          <li><a href="#design-stop">گالری</a></li>
-          <li><a href="#performance-stop">کارایی</a></li>
-          <li><a href="#cabin-stop">کابین</a></li>
+          <li><a href="#the-floor">گالری</a></li>
+          <li><a href="#performance-fleet">کارایی</a></li>
+          <li><a href="#craftsmanship">کیفیت</a></li>
         </ul>
       </nav>
 
@@ -71,9 +68,9 @@
 
     <div class="nav__mobile" id="nav-mobile-menu" hidden>
       <ul>
-        <li><a href="#design-stop">گالری</a></li>
-        <li><a href="#performance-stop">کارایی</a></li>
-        <li><a href="#cabin-stop">کابین</a></li>
+        <li><a href="#the-floor">گالری</a></li>
+        <li><a href="#performance-fleet">کارایی</a></li>
+        <li><a href="#craftsmanship">کیفیت</a></li>
       </ul>
       <a href="#book-viewing" class="btn">رزرو بازدید</a>
     </div>
@@ -107,122 +104,8 @@
     </div>
   </section>
 
-  <section class="arrival" id="arrival">
-    <div class="container arrival__inner">
-      <div class="route-line" data-route-line>
-        <span class="route-line__marker">
-          <span class="route-line__index">01</span>
-          <span class="route-line__label">Arrival</span>
-        </span>
-        <span class="route-line__track">
-          <span class="route-line__sweep" aria-hidden="true"></span>
-        </span>
-      </div>
-
-      <p class="arrival__statement">
-        پیش از راه‌یافتن به این نگارخانه، هر خودرو به‌دقت بازبینی می‌شود؛ بدون
-        سابقه حراج، بدون تعمیر پنهان. آنچه می‌بینید، دقیقاً همان چیزی است که از
-        کارخانه بیرون آمده.
-      </p>
-    </div>
-  </section>
-
-  <section class="design-stop" id="design-stop">
-    <div class="container">
-      <div class="route-line" data-route-line>
-        <span class="route-line__marker">
-          <span class="route-line__index">02</span>
-          <span class="route-line__label">Design</span>
-        </span>
-        <span class="route-line__track">
-          <span class="route-line__sweep" aria-hidden="true"></span>
-        </span>
-      </div>
-
-      <div class="design-stop__grid">
-        <figure class="design-stop__media">
-          <picture>
-            <source srcset="assets/images/design-stop.webp" type="image/webp" />
-            <img
-              src="assets/images/design-stop.jpg"
-              alt="نمای جانبی بی‌ام‌و 8 سری گرن‌کوپه در نور استودیویی"
-              decoding="async"
-            />
-          </picture>
-        </figure>
-
-        <div class="design-stop__info">
-          <p class="eyebrow design-stop__eyebrow">DESIGN STUDY &middot; 2024</p>
-          <h2 class="design-stop__name">BMW 8 Series Gran Coupe</h2>
-          <p class="design-stop__copy">
-            خط سقف بدون وقفه از جلو تا عقب می‌رود؛ چیزی که طراحی آن به‌جای
-            فریاد زدن، زمزمه می‌کند.
-          </p>
-
-          <svg
-            class="design-stop__silhouette"
-            viewBox="0 0 400 40"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M0,32 C40,30 60,10 100,8 C140,6 180,6 220,8 C260,10 280,20 320,24 C350,27 380,26 400,22"
-            />
-          </svg>
-
-          <dl class="design-stop__specs">
-            <div>
-              <dt class="design-stop__spec-label">طول</dt>
-              <dd class="design-stop__spec-value">5090<span>mm</span></dd>
-            </div>
-            <div>
-              <dt class="design-stop__spec-label">عرض</dt>
-              <dd class="design-stop__spec-value">1902<span>mm</span></dd>
-            </div>
-            <div>
-              <dt class="design-stop__spec-label">ارتفاع</dt>
-              <dd class="design-stop__spec-value">1418<span>mm</span></dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="performance-stop" id="performance-stop">
-    <div class="container">
-      <div class="route-line" data-route-line>
-        <span class="route-line__marker">
-          <span class="route-line__index">03</span>
-          <span class="route-line__label">Performance</span>
-        </span>
-        <span class="route-line__track">
-          <span class="route-line__sweep" aria-hidden="true"></span>
-        </span>
-      </div>
-
-      <p class="eyebrow performance-stop__eyebrow">M850i xDrive Gran Coupe</p>
-
-      <div class="performance-stop__grid">
-        <div class="performance-stop__stat">
-          <p class="performance-stop__value">3.7<span>s</span></p>
-          <p class="performance-stop__label">صفر تا صد</p>
-        </div>
-        <div class="performance-stop__stat">
-          <p class="performance-stop__value">250<span>km/h</span></p>
-          <p class="performance-stop__label">سرعت نهایی</p>
-        </div>
-        <div class="performance-stop__stat">
-          <p class="performance-stop__value">530<span>hp</span></p>
-          <p class="performance-stop__label">قدرت موتور</p>
-        </div>
-        <div class="performance-stop__stat">
-          <p class="performance-stop__value">750<span>Nm</span></p>
-          <p class="performance-stop__label">گشتاور</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Sections 3-9 are being rebuilt against the revised AGENTS.md plan,
+       one section at a time, in build order. -->
 
   <!-- Remaining sections are added one at a time, in build order, per AGENTS.md. -->
 
