@@ -1,0 +1,69 @@
+.craftsmanship {
+  background: var(--graphite);
+  padding-block: var(--sp-16);
+}
+
+.craftsmanship .route-line {
+  margin-block-end: var(--sp-6);
+}
+
+.craftsmanship__intro {
+  max-inline-size: 48ch;
+  margin-block-end: var(--sp-8);
+  color: var(--aluminum);
+  font-size: var(--fs-body);
+}
+
+.craftsmanship__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.craft-item__media {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-block-end: var(--sp-3);
+  background: radial-gradient(
+      ellipse at 35% 40%,
+      rgba(27, 58, 92, 0.3),
+      transparent 65%
+    ),
+    linear-gradient(160deg, var(--charcoal) 0%, var(--graphite) 100%);
+}
+
+.craft-item__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.craft-item__eyebrow {
+  margin-block-end: var(--sp-1);
+}
+
+.craft-item__source {
+  color: var(--aluminum);
+}
+
+.craft-item__copy {
+  color: var(--off-white);
+  font-size: var(--fs-body);
+}
+
+@media (max-width: 1023px) {
+  .craftsmanship__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .craftsmanship {
+    padding-block: var(--sp-8);
+  }
+
+  .craftsmanship__grid {
+    grid-template-columns: 1fr;
+  }
+}

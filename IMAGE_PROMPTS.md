@@ -21,3 +21,11 @@ Logged in build order, tagged by section number, per AGENTS.md. No placeholders 
 
 **Placement:** one image per card in `.floor-card__media` (`css/the-floor.css`), `aspect-ratio: 3/2` locked (matches Card 1's real photo ratio so the grid doesn't jump once the rest are sourced).
 **Aspect ratio:** 3:2 for all five, no exceptions — a mixed-ratio grid would read as sloppy inventory photos, not a curated shoot.
+
+## Section 6 — Craftsmanship
+**Status:** NOT YET SOURCED — all three render as CSS-only toned panels (same radial charcoal/sapphire gradient treatment used elsewhere on the site) until real macro photos land.
+**Placement:** one square-ish macro shot per material callout in `.craft-item__media` (`css/craftsmanship.css`), 3-up grid on desktop, stacked on mobile.
+- **Leather (from the BMW 8 Series Gran Coupe).** Extreme macro shot of Nappa leather on a center console, focused tight enough to show the hand blind-stitching detail at the seam; single soft raking light so the stitch texture casts a faint shadow. No full seat or console visible, just the material and the stitch line.
+- **Wood (from the Alpina B8 Gran Coupe).** Extreme macro shot of open-pore walnut veneer trim, unlacquered — grain should read as matte, not glossy, with the light chosen to show the wood's texture rather than a mirror reflection.
+- **Metal (from the BMW M5 Competition).** Extreme macro shot of brushed aluminum on a gearshift or pedal edge, with the brush-stroke direction of the metal visible under a raking light.
+**Aspect ratio:** 1:1 for all three — square macro crops read as deliberate material samples, not incidental product photography.
