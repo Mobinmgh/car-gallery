@@ -19,7 +19,8 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-4);
-  block-size: 64px;
+  block-size: var(--nav-height);
+  padding-block-start: var(--sp-2);
 }
 
 .nav__logo {
@@ -128,7 +129,7 @@
 
 .nav__mobile {
   position: fixed;
-  inset-block-start: 64px;
+  inset-block-start: calc(var(--nav-height) + var(--sp-2));
   inset-inline: 0;
   z-index: var(--z-overlay);
   background: var(--charcoal);

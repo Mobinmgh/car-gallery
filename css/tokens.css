@@ -52,6 +52,9 @@
   --dur-in: 0.9s;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
+  /* Nav */
+  --nav-height: 64px;
+
   /* Z-index scale */
   --z-base: 0;
   --z-route: 10;

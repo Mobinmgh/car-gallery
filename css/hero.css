@@ -48,7 +48,7 @@
   position: relative;
   z-index: 1;
   inline-size: 100%;
-  max-inline-size: 640px;
+  max-inline-size: 860px;
   /* Overrides .container's margin-inline:auto shorthand so this block
      anchors to the inline-start (right, in RTL) edge instead of centering. */
   margin-inline-start: 0;
