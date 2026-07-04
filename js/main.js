@@ -112,6 +112,31 @@ const MOTION = {
   });
 })();
 
+// Craftsmanship: slow parallax on the material close-ups - each image
+// drifts vertically at a different rate than the page scroll, the classic
+// parallax read. The image is deliberately oversized in CSS so this never
+// reveals a gap at the frame edge.
+(function initCraftParallax() {
+  if (prefersReducedMotion) return;
+
+  document.querySelectorAll(".craft-item__media img").forEach((img) => {
+    gsap.fromTo(
+      img,
+      { yPercent: -8 },
+      {
+        yPercent: 8,
+        ease: "none",
+        scrollTrigger: {
+          trigger: img.closest(".craft-item"),
+          start: "top bottom",
+          end: "bottom top",
+          scrub: MOTION.scrub,
+        },
+      }
+    );
+  });
+})();
+
 // Performance across the fleet: spec numbers count up from zero synced to
 // scroll position, not a timer. Reads straight off each cell's existing
 // text node (e.g. "3.3" inside "<td>3.3<span>s</span></td>") and animates

@@ -21,6 +21,7 @@
 }
 
 .craft-item__media {
+  position: relative;
   aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
@@ -33,9 +34,15 @@
     linear-gradient(160deg, var(--charcoal) 0%, var(--graphite) 100%);
 }
 
+/* Deliberately oversized (130% height) so the parallax scroll effect in
+   js/main.js can shift it vertically without ever revealing a gap at the
+   frame's top or bottom edge. */
 .craft-item__media img {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: -15%;
   inline-size: 100%;
-  block-size: 100%;
+  block-size: 130%;
   object-fit: cover;
 }
 
