@@ -4,6 +4,29 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
+// Single easing curve + timing scale for every animation on the page. This
+// is what keeps a full motion pass reading as one coherent system instead of
+// a pile of unrelated effects — every new animation below reaches into this,
+// nothing hand-rolls its own ease/duration.
+const MOTION = {
+  ease: "power3.out",
+  duration: { fast: 0.3, base: 0.6, slow: 0.9 },
+  scrub: 0.6,
+};
+
+// Smooth scroll, wired to GSAP's ScrollTrigger so every scroll-scrubbed
+// animation below tracks Lenis's smoothed position instead of the raw wheel
+// event. Skipped entirely under reduced motion — native (instant) scroll
+// takes over rather than trying to tone the smoothing down.
+(function initSmoothScroll() {
+  if (prefersReducedMotion || typeof Lenis === "undefined") return;
+
+  const lenis = new Lenis();
+  lenis.on("scroll", ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+})();
+
 // Nav: solid panel after scrolling past the transparent-over-hero zone.
 (function initNav() {
   const nav = document.getElementById("site-nav");
@@ -53,8 +76,8 @@ const prefersReducedMotion = window.matchMedia(
   gsap.to(items, {
     opacity: 1,
     y: 0,
-    duration: 0.9,
-    ease: "power3.out",
+    duration: MOTION.duration.slow,
+    ease: MOTION.ease,
     stagger: 0.12,
     delay: 0.2,
   });
@@ -81,7 +104,7 @@ const prefersReducedMotion = window.matchMedia(
           trigger: line,
           start: "top 85%",
           end: "bottom 15%",
-          scrub: 0.6,
+          scrub: MOTION.scrub,
           invalidateOnRefresh: true,
         },
       }

@@ -44,12 +44,33 @@ A horizontal "route line" — a chrome light-reflection sweep, GSAP ScrollTrigge
 
 ## Motion direction
 
-One orchestrated sequence beats scattered hover effects. Priority order:
-1. Hero load-in
-2. Route-line scroll sweep (the main event — spend your GSAP budget here)
-3. Restrained hover states on car cards (last, and least)
+**Updated: full motion pass, deliberate exception to "don't animate everything."** The
+original restraint rule below was right for the first pass — it stopped the
+build from padding itself with flourishes. This pass is different: the goal is
+award-tier polish, not restraint, and that means one deliberate signature
+animation per section instead of a plain fade-in on enter. What doesn't change
+is discipline — every animation shares one easing curve and one timing system
+(see `js/main.js`'s `MOTION` constant), so a page with many moments still reads
+as one coherent piece of motion design, not a demo reel. `prefers-reduced-motion`
+is still non-negotiable for all of it.
 
-Respect `prefers-reduced-motion`. Don't animate everything. Pick the 2-3 moments that matter, let the rest sit still. If you find yourself adding a fourth or fifth animated flourish, stop and ask whether it's serving the brief or padding the demo.
+Smooth scroll: Lenis, wired to GSAP's ScrollTrigger (`lenis.on('scroll',
+ScrollTrigger.update)` + `gsap.ticker.add`), so every scroll-scrubbed animation
+tracks the smoothed scroll position, not the raw wheel event.
+
+Signature animations, one per section:
+- The Floor: cards scale and sharpen into focus as they center in the viewport.
+- Performance across the fleet: spec numbers count up synced to scroll position, not a timer.
+- Craftsmanship: slow parallax on the material close-ups.
+- Provenance: the connecting line between numbered steps draws itself on scroll, extending the route-line visual language.
+- CTA buttons throughout: magnetic pull toward the cursor on hover.
+- Floor cards: subtle tilt toward cursor position on hover.
+
+Original restraint priority order (superseded above, kept for context on the
+first pass's reasoning):
+1. Hero load-in
+2. Route-line scroll sweep
+3. Restrained hover states on car cards (last, and least)
 
 ## Sections — build all of these, in this order
 
