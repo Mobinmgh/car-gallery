@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="css/route-line.css" />
   <link rel="stylesheet" href="css/arrival.css" />
   <link rel="stylesheet" href="css/the-floor.css" />
+  <link rel="stylesheet" href="css/performance-fleet.css" />
 </head>
 <body>
   <header class="nav" id="site-nav">
@@ -229,7 +230,93 @@
     </div>
   </section>
 
-  <!-- Sections 5-9 are being rebuilt against the revised AGENTS.md plan,
+  <section class="performance-fleet" id="performance-fleet">
+    <div class="container">
+      <div class="route-line" data-route-line>
+        <span class="route-line__marker">
+          <span class="route-line__index">03</span>
+          <span class="route-line__label">Performance</span>
+        </span>
+        <span class="route-line__track">
+          <span class="route-line__sweep" aria-hidden="true"></span>
+        </span>
+      </div>
+
+      <table class="performance-fleet__table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">BMW M5 Competition</th>
+            <th scope="col">BMW 8 Series Gran Coupe</th>
+            <th scope="col">Alpina B8 Gran Coupe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">صفر تا صد</th>
+            <td>3.3<span>s</span></td>
+            <td>3.7<span>s</span></td>
+            <td>3.6<span>s</span></td>
+          </tr>
+          <tr>
+            <th scope="row">سرعت نهایی</th>
+            <td>305<span>km/h</span></td>
+            <td>250<span>km/h</span></td>
+            <td>302<span>km/h</span></td>
+          </tr>
+          <tr>
+            <th scope="row">قدرت موتور</th>
+            <td>625<span>hp</span></td>
+            <td>530<span>hp</span></td>
+            <td>612<span>hp</span></td>
+          </tr>
+          <tr>
+            <th scope="row">گشتاور</th>
+            <td>750<span>Nm</span></td>
+            <td>750<span>Nm</span></td>
+            <td>800<span>Nm</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Same data as the table above, stacked per car - avoids a
+           horizontal-scroll table on narrow viewports entirely. CSS
+           toggles which one is visible per breakpoint; display:none
+           already excludes the hidden one from the a11y tree, so no
+           aria-hidden needed on top of that. -->
+      <div class="performance-fleet__cards">
+        <div class="fleet-spec-card">
+          <h3 class="fleet-spec-card__name">BMW M5 Competition</h3>
+          <dl class="fleet-spec-card__list">
+            <div><dt>صفر تا صد</dt><dd>3.3<span>s</span></dd></div>
+            <div><dt>سرعت نهایی</dt><dd>305<span>km/h</span></dd></div>
+            <div><dt>قدرت موتور</dt><dd>625<span>hp</span></dd></div>
+            <div><dt>گشتاور</dt><dd>750<span>Nm</span></dd></div>
+          </dl>
+        </div>
+        <div class="fleet-spec-card">
+          <h3 class="fleet-spec-card__name">BMW 8 Series Gran Coupe</h3>
+          <dl class="fleet-spec-card__list">
+            <div><dt>صفر تا صد</dt><dd>3.7<span>s</span></dd></div>
+            <div><dt>سرعت نهایی</dt><dd>250<span>km/h</span></dd></div>
+            <div><dt>قدرت موتور</dt><dd>530<span>hp</span></dd></div>
+            <div><dt>گشتاور</dt><dd>750<span>Nm</span></dd></div>
+          </dl>
+        </div>
+        <div class="fleet-spec-card">
+          <h3 class="fleet-spec-card__name">Alpina B8 Gran Coupe</h3>
+          <dl class="fleet-spec-card__list">
+            <div><dt>صفر تا صد</dt><dd>3.6<span>s</span></dd></div>
+            <div><dt>سرعت نهایی</dt><dd>302<span>km/h</span></dd></div>
+            <div><dt>قدرت موتور</dt><dd>612<span>hp</span></dd></div>
+            <div><dt>گشتاور</dt><dd>800<span>Nm</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sections 6-9 are being rebuilt against the revised AGENTS.md plan,
        one section at a time, in build order. -->
 
   <!-- Remaining sections are added one at a time, in build order, per AGENTS.md. -->

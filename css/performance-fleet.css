@@ -1,0 +1,122 @@
+.performance-fleet {
+  background: var(--charcoal);
+  padding-block: var(--sp-16);
+}
+
+.performance-fleet .route-line {
+  margin-block-end: var(--sp-8);
+}
+
+.performance-fleet__table {
+  inline-size: 100%;
+  border-collapse: collapse;
+}
+
+.performance-fleet__table th,
+.performance-fleet__table td {
+  padding-block: var(--sp-3);
+  padding-inline: var(--sp-2);
+  border-block-end: var(--hairline);
+  text-align: center;
+}
+
+.performance-fleet__table thead th {
+  font-family: var(--font-latin);
+  font-variation-settings: "wght" 600;
+  font-size: var(--fs-h3);
+  color: var(--off-white);
+  border-block-end: var(--hairline-gold);
+}
+
+.performance-fleet__table thead th:first-child {
+  border-block-end: var(--hairline);
+}
+
+.performance-fleet__table tbody th {
+  font-family: var(--font-fa);
+  font-size: var(--fs-small);
+  color: var(--aluminum);
+  text-align: start;
+  white-space: nowrap;
+}
+
+.performance-fleet__table td {
+  font-family: var(--font-latin);
+  font-variation-settings: "wght" 600;
+  font-size: 1.5rem;
+  color: var(--off-white);
+  font-variant-numeric: tabular-nums;
+}
+
+.performance-fleet__table td span {
+  font-size: 0.6em;
+  color: var(--aluminum);
+  margin-inline-start: 2px;
+}
+
+.performance-fleet__table tbody tr:last-child th,
+.performance-fleet__table tbody tr:last-child td {
+  border-block-end: none;
+}
+
+.performance-fleet__cards {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .performance-fleet {
+    padding-block: var(--sp-8);
+  }
+
+  .performance-fleet__table {
+    display: none;
+  }
+
+  .performance-fleet__cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-6);
+  }
+
+  .fleet-spec-card__name {
+    font-family: var(--font-latin);
+    font-variation-settings: "wght" 600;
+    font-size: var(--fs-h3);
+    color: var(--off-white);
+    margin-block-end: var(--sp-3);
+    padding-block-end: var(--sp-2);
+    border-block-end: var(--hairline-gold);
+  }
+
+  .fleet-spec-card__list > div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-block: var(--sp-2);
+    border-block-end: var(--hairline);
+  }
+
+  .fleet-spec-card__list > div:last-child {
+    border-block-end: none;
+  }
+
+  .fleet-spec-card__list dt {
+    font-family: var(--font-fa);
+    font-size: var(--fs-small);
+    color: var(--aluminum);
+  }
+
+  .fleet-spec-card__list dd {
+    font-family: var(--font-latin);
+    font-variation-settings: "wght" 600;
+    font-size: 1.15rem;
+    color: var(--off-white);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fleet-spec-card__list dd span {
+    font-size: 0.6em;
+    color: var(--aluminum);
+    margin-inline-start: 2px;
+  }
+}
