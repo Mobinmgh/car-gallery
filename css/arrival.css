@@ -1,0 +1,30 @@
+.arrival {
+  background: var(--charcoal);
+  padding-block: var(--sp-16);
+}
+
+.arrival .route-line {
+  margin-block-end: var(--sp-8);
+}
+
+.arrival__statement {
+  max-inline-size: 640px;
+  margin-inline: auto;
+  text-align: center;
+  font-family: var(--font-fa);
+  font-variation-settings: "wght" 500;
+  font-size: var(--fs-h3);
+  line-height: 1.8;
+  color: var(--off-white);
+}
+
+@media (max-width: 767px) {
+  .arrival {
+    padding-block: var(--sp-8);
+  }
+
+  .arrival__statement {
+    font-size: var(--fs-body);
+    line-height: 1.9;
+  }
+}
