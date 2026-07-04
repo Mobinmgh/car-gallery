@@ -76,15 +76,10 @@
   font-size: var(--fs-body);
 }
 
-/* The CTA breaks from the rest of the right-anchored text and sits at the
-   flow-end (left, in RTL) — the "end of the sentence" position, distinct
-   from the reading column. */
 .hero__cta {
   display: flex;
   inline-size: fit-content;
   margin-block-start: var(--sp-6);
-  margin-inline-start: auto;
-  margin-inline-end: 0;
 }
 
 .hero__scroll-cue {
